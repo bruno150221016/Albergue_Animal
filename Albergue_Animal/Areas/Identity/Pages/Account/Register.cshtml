@@ -66,8 +66,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" id="testepass" title="A password deve conter pelo menos um carater não alfanumérico, uma letra maiúscula e um digito entre 0-9." />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                <!--<input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>-->
+                <div class="input-group">
+                    <input asp-for="Input.Password" class="form-control" id="testepass" />
+                    <span asp-validation-for="Input.Password" class="input-group-addon" title="A password deve conter pelo menos um carater não alfanumérico, uma letra maiúscula e um digito entre 0-9."><span class="glyphicon glyphicon-question-sign"></span></span>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="Input.ConfirmPassword"></label>
