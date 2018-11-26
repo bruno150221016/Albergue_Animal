@@ -37,11 +37,11 @@ namespace Albergue_Animal.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage = "O email não está inserido")]
             [EmailAddress]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "A password não está inserida")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 

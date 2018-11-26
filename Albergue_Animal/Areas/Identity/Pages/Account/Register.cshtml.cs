@@ -41,16 +41,16 @@ namespace Albergue_Animal.Areas.Identity.Pages.Account
         public class InputModel
         {
 
-            [Required]
+            [Required(ErrorMessage = "O Nome não está preenchido.")]
             [DataType(DataType.Text)]
             [Display(Name = "Nome Completo")]
             public string Nome { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "A Morada não está preenchida")]
             [Display(Name = "Morada")]
             public String Morada { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "O número de telefone não está preenchido")]
             [Display(Name = "Telefone")]
             public String Telefone { get; set; }
 
@@ -60,19 +60,19 @@ namespace Albergue_Animal.Areas.Identity.Pages.Account
 
 
 
-            [Required]
+            [Required(ErrorMessage = "O email não está preenchido")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "A password não está preenchida")]
             [StringLength(100, ErrorMessage = "A {0} tem de ter no mínimo {2} e no máximo {1} Caracteres .", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "Confirmar password")]
             [Compare("Password", ErrorMessage = "A password e a confirmação password não combinam.")]
             public string ConfirmPassword { get; set; }
         }
