@@ -18,7 +18,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace Albergue_Animal
 {
-    public class Startup
+    public class Startup//
     {
         public Startup(IConfiguration configuration)
         {
@@ -31,7 +31,10 @@ namespace Albergue_Animal
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
+             
             {
+              
+                // options. = "/Identity/Account/AccessDenied";
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
@@ -88,7 +91,7 @@ namespace Albergue_Animal
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            CreateRoles(serviceProvider).Wait();
+          //  CreateRoles(serviceProvider).Wait();
         }
 
 

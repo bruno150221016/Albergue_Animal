@@ -43,11 +43,11 @@ namespace Albergue_Animal.Areas.Identity.Pages.Account
 
             [Required]
             [DataType(DataType.Text)]
-            [Display(Name = "Full name")]
+            [Display(Name = "Nome Completo")]
             public string Nome { get; set; }
 
             [Required]
-            [Display(Name = "Address")]
+            [Display(Name = "Morada")]
             public String Morada { get; set; }
 
             [Required]
@@ -55,7 +55,7 @@ namespace Albergue_Animal.Areas.Identity.Pages.Account
             public String Telefone { get; set; }
 
           
-            [Display(Name = "Telefone")]
+            [Display(Name = "Fotografia")]
             public String Fotografia { get; set; }
 
 
@@ -66,14 +66,14 @@ namespace Albergue_Animal.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "A {0} tem de ter no mínimo {2} e no máximo {1} Caracteres .", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "A password e a confirmação password não combinam.")]
             public string ConfirmPassword { get; set; }
         }
 
@@ -91,7 +91,8 @@ namespace Albergue_Animal.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User created a new account with password.");
+                    // _logger.LogInformation("User created a new account with password.");
+                    _logger.LogInformation("Utilizador criou uma nova conta com a password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var callbackUrl = Url.Page(
@@ -100,10 +101,10 @@ namespace Albergue_Animal.Areas.Identity.Pages.Account
                         values: new { userId = user.Id, code = code },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    await _emailSender.SendEmailAsync(Input.Email, "Confirme o seu email",
+                        $"Por favor confirme o seu registo <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicando aqui</a>.");
 
-                   // await _signInManager.SignInAsync(user, isPersistent: false);
+                  //  await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(returnUrl);
                 }
                 foreach (var error in result.Errors)

@@ -42,15 +42,32 @@ namespace Albergue_Animal.Controllers
             //     return Redirect("Albergue_Animal/Areas/Identity/Pages/Account/AccessDenied");
             // }
             //if (User.IsInRole("Admin"))
-            {
-                ViewData["role"] = "Admin";
+            //{
+               // ViewData["role"] = "Admin";
                 return View(_context.Utilizadores.ToList());
-            }
+            //}
             //else
             //{
-            //    return View("~/Views/Animals/index.cshtml");
+                //return View(AccessDenied());
             //}
         }
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+        }
 }
