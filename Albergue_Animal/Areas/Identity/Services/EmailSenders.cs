@@ -18,7 +18,7 @@ namespace Albergue_Animal.Areas.Identity.Services
             var msg = new MimeMessage();
             msg.From.Add(new MailboxAddress("ESW05-G03 GROUP", "m7.gpr.1718@gmail.com"));
             msg.To.Add(new MailboxAddress("User", email));
-            msg.Subject = subject+"ESW05-G03 GROUP NOTIFICATIONS";
+            msg.Subject = subject + "ESW05-G03 GROUP NOTIFICATIONS";
             msg.Body = new TextPart("html")
             {
                 //Text = "Please < a href =\"https://albergueanimais.azurewebsites.net > login</a>"
@@ -27,12 +27,13 @@ namespace Albergue_Animal.Areas.Identity.Services
 
             using (var client = new SmtpClient())
             {
-                client.Connect("smtp.gmail.com", 465, SecureSocketOptions.SslOnConnect);
+                client.ServerCertificateValidationCallback = (s, c, h, e) => true;
+                client.Connect("smtp.gmail.com", 465, SecureSocketOptions.Auto);
                 client.Authenticate("m7.gpr.1718@gmail.com", "gpr_m7_1718");
                 client.Send(msg);
                 client.Disconnect(true);
             }
-             return Task.CompletedTask;
+            return Task.CompletedTask;
         }
 
     }
