@@ -18,7 +18,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace Albergue_Animal
 {
-    public class Startup
+    public class Startup //
     {
         public Startup(IConfiguration configuration)
         {
