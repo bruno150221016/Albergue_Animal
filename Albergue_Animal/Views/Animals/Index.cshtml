@@ -1,14 +1,19 @@
 ﻿@model IEnumerable<Albergue_Animal.Models.Animal>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de Animais";
 }
 
-<h2>Index</h2>
+<br />
+<h2>@ViewData["Title"]</h2>
+
+<br />
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar Animal</a>
 </p>
+<br />
+
 <table class="table">
     <thead>
         <tr>
@@ -37,35 +42,36 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Raca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sexo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataEntrada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataVacina)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fotografia)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AnimalId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AnimalId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AnimalId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Raca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataEntrada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataVacina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fotografia)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AnimalId">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.AnimalId">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AnimalId">Remover</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
