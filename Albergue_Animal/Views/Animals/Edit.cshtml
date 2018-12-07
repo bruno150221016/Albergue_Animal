@@ -1,12 +1,14 @@
 ﻿@model Albergue_Animal.Models.Animal
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Informações";
 }
 
-<h2>Edit</h2>
+<br />
 
-<h4>Animal</h4>
+<h2>Editar Informações</h2>
+
+<!--<h4>Animal</h4>-->
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,45 +20,54 @@
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Raca" class="control-label"></label>
                 <input asp-for="Raca" class="form-control" />
                 <span asp-validation-for="Raca" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Sexo" class="control-label"></label>
                 <input asp-for="Sexo" class="form-control" />
                 <span asp-validation-for="Sexo" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Cor" class="control-label"></label>
                 <input asp-for="Cor" class="form-control" />
                 <span asp-validation-for="Cor" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="DataEntrada" class="control-label"></label>
                 <input asp-for="DataEntrada" class="form-control" />
                 <span asp-validation-for="DataEntrada" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="DataVacina" class="control-label"></label>
                 <input asp-for="DataVacina" class="form-control" />
                 <span asp-validation-for="DataVacina" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group" action="/action_page.php">
                 <label asp-for="Fotografia" class="control-label"></label>
-                <input asp-for="Fotografia" class="form-control" />
+                <br />
+                <input asp-for="Fotografia" class="btn btn-default" type="file" name="pic" accept="image/*">
                 <span asp-validation-for="Fotografia" class="text-danger"></span>
             </div>
+            <br />
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar Alterações" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar à Lista de Animais</a>
 </div>
 
 @section Scripts {
