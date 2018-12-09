@@ -1,17 +1,17 @@
 ﻿#RedMenu {
-    background-color: #d8703a; /*cor da barra de menu*/
-    border-color: #d8703a;
+    background-color: #6B2737; /*cor da barra de menu*/
+    border-color: #FCEFEF;
 }
 
     #RedMenu ul li a {
-        color: #ffffff;
+        color: #FCEFEF;
     }
 
     #RedMenu ul li:hover {
-        background-color: #F5D0A9; /*cor dos botoes*/
-    }
+        background-color: #F5D0A9;  
+    }  
 
-
+ 
 #ajuda {
     position: relative;
     float: right;

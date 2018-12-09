@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Albergue_Animal.Models.Animal>
 
 @{
-    ViewData["Title"] = "Lista de Animais";
+	ViewData["Title"] = "Lista de Animais";
 }
 
 <br />
@@ -10,68 +10,243 @@
 <br />
 
 <p>
-    <a asp-action="Create">Criar Animal</a>
+	<a asp-action="Create">Criar Animal</a>
 </p>
 <br />
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Raca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sexo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataEntrada)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataVacina)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fotografia)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Raca)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sexo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataEntrada)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataVacina)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fotografia)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.AnimalId">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.AnimalId">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@item.AnimalId">Remover</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+<html>
+
+<head>
+	<title> Usando a tag <img> </title>
+	<meta name="description" content="Como usar uma imagem em um site">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<style>
+		img {
+			border-radius: 12px;
+			border: 2px solid #CCC5B9;
+		}
+
+		table, th, td {
+			border: 1px solid white;
+			border-collapse: collapse;
+			
+		}
+
+		th, td {
+			padding: 2px;
+			border-radius: 12px;
+			font-family: Tahoma, Serif, Arial, Helvetica, sans-serif;
+			border: 2px solid white;
+			Color: #CCC5B9;
+			text-align: right;
+		}
+
+		th {
+			border-radius: 12px;
+		}
+
+
+		button {
+			background-color: white;
+			font-family: Tahoma, Serif, Arial, Helvetica, sans-serif;
+			border: 2px solid #CCC5B9;
+			border-radius: 12px;
+			color: white;
+			padding: 5px 5px;
+			
+		}
+	</style>
+</head>
+
+
+
+
+<body>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp;	<a href="https://localhost:44324/Animals/Details/2">
+		<img src="~/images/cao1.PNG" alt="Imagem de Cao1" height="250" width="250" />
+	</a>
+	&nbsp; &nbsp; <a href="https://localhost:44324/Animals/Details/3">
+		<img src="~/images/cao2.PNG" alt="Imagem de Cao2" height="250" width="250" />
+	</a>
+	&nbsp; &nbsp; <a href="https://localhost:44324/Animals/Details/4">
+		<img src="~/images/cao3.PNG" alt="Imagem de Cao3" height="250" width="250" />
+	</a>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	<table style="width:93%">
+		<tr>
+			<th>
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;   &nbsp;
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Nikki </font>
+				</button>
+			</th>
+			<th>
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Doggie </font>
+				</button>
+			</th>
+			<th>
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Pantufa </font>
+				</button>
+			</th>
+		</tr>
+	</table>
+
+	</br>
+	</br>
+	</br>
+
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; <a href="https://localhost:44324/Animals/Details/5">
+		<img src="~/images/cao4.PNG" alt="Imagem de Cao4" height="250" width="250" />
+	</a>
+	&nbsp; &nbsp; <a href="https://localhost:44324/Animals/Details/6">
+		<img src="~/images/cao7.PNG" alt="Imagem de Cao7" height="250" width="250" />
+	</a>
+	&nbsp; &nbsp; <a href="https://localhost:44324/Animals/Details/7">
+		<img src="~/images/cao6.PNG" alt="Imagem de Cao6" height="250" width="250" />
+	</a>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp;
+	<table style="width:93%">
+		<tr>
+			<th>
+				&nbsp; &nbsp;
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Romeu </font>
+				</button>
+			</th>
+			<th>
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Mila </font>
+				</button>
+			</th>
+			<th>
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Xini </font>
+				</button>
+			</th>
+		</tr>
+	</table>
+
+
+	</br>
+	</br>
+	</br>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; <a href="https://localhost:44324/Animals/Details/8">
+					<img src="~/images/cao8.PNG" alt="Imagem de Cao8" height="250" width="250" />
+				 </a>
+	&nbsp; &nbsp; <a href="https://localhost:44324/Animals/Details/9">
+					<img src="~/images/cao9.PNG" alt="Imagem de Cao9" height="250" width="250" />
+				  </a>
+	&nbsp; &nbsp; <a href="https://localhost:44324/Animals/Details/10">
+					  <img src="~/images/cao10.PNG" alt="Imagem de Cao10" height="250" width="250" />
+				  </a> 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+	<table style="width:93%">
+		<tr>
+			<th>
+				&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Silu </font>
+				</button>
+			</th>
+			<th>
+				&nbsp; &nbsp;
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Bali </font>
+				</button>
+			</th>
+			<th>
+				<button>
+					<font face="Tahoma, serif" size="3" color=BC8F8F>Gutta </font>
+				</button>
+			</th>
+		</tr>
+	</table>
+
+
+	</br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.Nome)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Raca)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Sexo)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Cor)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.DataEntrada)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.DataVacina)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Fotografia)
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+
+
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Nome)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Raca)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Sexo)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Cor)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DataEntrada)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DataVacina)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Fotografia)
+					</td>
+					<td>
+						<a asp-action="Edit" asp-route-id="@item.AnimalId">Editar</a> |
+						<a asp-action="Details" asp-route-id="@item.AnimalId">Detalhes</a> |
+						<a asp-action="Delete" asp-route-id="@item.AnimalId">Remover</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</body>
+
+</html> 
